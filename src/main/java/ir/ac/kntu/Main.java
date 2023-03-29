@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        LineReader lineReader=new LineReader();
         Scanner scanner = new Scanner(System.in);
         String fileName = scanner.nextLine();
         BufferedReader reader;
@@ -17,7 +18,8 @@ public class Main {
 
             while (line != null) {
                 System.out.println(line);
-                // read next line
+                lineReader.setLine(line);
+                lineReader.checker();
                 line = reader.readLine();
             }
             reader.close();
